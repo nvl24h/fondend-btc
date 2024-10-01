@@ -1,0 +1,71 @@
+@font-face {
+    font-family: "MyCustomFont";
+    src: url("./font/DMSerifDisplay-Italic.ttf") format("ttf"), url("./font/DMSerifDisplay-Regular.ttf") format("ttf"),
+        url("./font/AdobeFnt24.lst") format("lst");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+    --color-primary: #47c7ef;
+    --color-secondary: #f8f5f5;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: "MyCustomFont", Arial, sans-serif;
+}
+
+/* ====================== common ====================== */
+.container {
+    width: 1170px;
+    max-width: calc(100% - 24px);
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+.btn {
+    display: inline-block;
+    min-width: 205px;
+    line-height: 60px;
+    background: #2e80ce;
+    color: #fff;
+    font-size: 1.8rem;
+    font-weight: 400;
+    border-radius: 999px;
+    text-align: center;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+.section-heading {
+    color: #10375c;
+    font-size: 5rem;
+    font-weight: 600;
+    line-height: 1.2; /* 120% */
+    letter-spacing: -1px;
+}
+
+.section-desc {
+    margin-top: 18px;
+    color: #575f66;
+    font-size: 1.8rem;
+    font-weight: 300;
+    line-height: 1.67; /* 166.667% */
+}
+
+/* ====================== header ====================== */

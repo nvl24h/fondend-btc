@@ -1,0 +1,56 @@
+%!Adobe-FontList 1.24
+%Locale:0x409
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:DMSerifDisplay-Italic
+FamilyName:DM Serif Display
+StyleName:Italic
+FullName:DM Serif Display Italic
+MenuName:DM Serif Display
+StyleBits:1
+WritingScript:Roman
+OutlineFileName:G:\BETTY CHOISE\Webiste\Font\DM_Serif_Display\DMSerifDisplay-Italic.ttf
+DataFormat:sfntData
+hasSVG:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:70336
+FileModTime:1725491480
+WeightClass:400
+WidthClass:5
+AngleClass:1
+NameArray:0,Win,1,DM Serif Display
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:DMSerifDisplay-Regular
+FamilyName:DM Serif Display
+StyleName:Regular
+FullName:DM Serif Display Regular
+MenuName:DM Serif Display
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:G:\BETTY CHOISE\Webiste\Font\DM_Serif_Display\DMSerifDisplay-Regular.ttf
+DataFormat:sfntData
+hasSVG:no
+hasCOLR:no
+VariableFontType:NonVariableFont
+FileLength:72220
+FileModTime:1725491480
+WeightClass:400
+WidthClass:5
+AngleClass:0
+NameArray:0,Win,1,DM Serif Display
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Invalid
+OutlineFileName:G:\BETTY CHOISE\Webiste\Font\DM_Serif_Display\OFL.txt
+FileModTime:1727148152
+%EndFont
+
