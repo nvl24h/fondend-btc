@@ -69,3 +69,58 @@ a {
 }
 
 /* ====================== header ====================== */
+.header {
+}
+
+.header__top {
+    height: 101px;
+    width: 100%;
+    background: var(--color-secondary);
+    display: flex;
+    align-items: center;
+}
+
+.header__box {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.header__left {
+    display: flex;
+    gap: 30px;
+}
+
+.header__left-box {
+    display: flex;
+    width: 129px;
+    gap: 8px;
+}
+
+.header__left-box img {
+    max-height: 20px;
+    max-height: 20px;
+}
+
+.header__left-boxText p {
+    font-size: 1.4rem;
+    padding-bottom: 11px;
+}
+
+.desc__bold {
+    font-weight: 700;
+    font-size: 1.6rem;
+}
+
+.header__right {
+    display: flex;
+    gap: 24px;
+}
+
+.header__search input {
+    width: 370px;
+    height: 40px;
+    border-radius: 20px;
+    border: 2px solid var(--color-primary);
+    padding: 0 20px;
+}
