@@ -38,14 +38,16 @@ a {
 
 .btn {
     display: inline-block;
-    min-width: 205px;
+    min-width: 216px;
     line-height: 60px;
-    background: #2e80ce;
+    background: var(--color-primary);
     color: #fff;
     font-size: 1.8rem;
     font-weight: 400;
-    border-radius: 999px;
+    border-radius: 10px;
     text-align: center;
+    outline: none;
+    border: 0;
 }
 
 .btn:hover {
@@ -71,6 +73,7 @@ a {
 /* ====================== header ====================== */
 /* ----------Header top ------------- */
 .header {
+    overflow: hidden;
 }
 
 .header__top {
@@ -243,49 +246,107 @@ a {
 }
 
 /* ====================== Hero ====================== */
-.slider-container {
-    position: relative;
+.hero__top {
+    max-height: 700px;
     width: 100%;
-    margin: auto;
-    overflow: hidden;
 }
 
 .slider {
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.slider__list {
     display: flex;
     transition: transform 0.5s ease-in-out;
+    position: relative;
 }
 
-.slide {
+.slider__item {
+    position: relative;
     min-width: 100%;
-    box-sizing: border-box;
 }
 
-.slide img {
+.slider__item.active {
+    display: block;
+}
+
+.slider__img {
     width: 100%;
     display: block;
 }
 
-.prev-btn,
-.next-btn {
+.slider__form {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 100%;
+}
+
+.slider__box {
+}
+
+.slider__desc {
+    font-size: 2rem;
+    color: var(--color-primary);
+    font-weight: 400;
+    text-transform: uppercase;
+    padding-bottom: 50px;
+}
+
+.slider__heading {
+    font-size: 10rem;
+    width: 700px;
+    color: white;
+    line-height: 1.1;
+    padding-bottom: 50px;
+}
+
+.slider__btn-left {
+    margin-right: 30px;
+}
+.slider__btn-left a,
+.slider__btn-right a {
+    text-transform: uppercase;
+    color: white;
+}
+
+.slider__step {
+    display: flex;
+    justify-content: space-between;
+}
+
+.slider__step button {
+    border: 2px solid var(--color-primary);
+    background: transparent;
+    border-radius: 50%;
+    width: 54px;
+    height: 54px;
+    color: var(--color-primary);
+    font-weight: 500;
+    transition: all 0.3s ease-in-out;
+}
+
+.slider__step button:hover {
+    background: var(--color-primary);
+    color: white;
+}
+
+.slider__prev {
+    transform: translateX(-100px);
+}
+
+.slider__next {
+    transform: translateX(100px);
+}
+
+.btn__slider {
+    width: 100%;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-}
-
-.prev-btn {
-    left: 10px;
-}
-
-.next-btn {
-    right: 10px;
-}
-
-.prev-btn:hover,
-.next-btn:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+    left: 0;
 }
