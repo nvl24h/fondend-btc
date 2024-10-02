@@ -3,6 +3,13 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+            integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
         <link rel="stylesheet" href="./assets/reset.css" />
         <link rel="stylesheet" href="./assets/style.css" />
         <title>Document</title>
@@ -34,12 +41,49 @@
                         <div class="header__right">
                             <div class="header__search">
                                 <input type="text" name="search" id="search" placeholder="Tìm kiếm sản phẩm" />
+                                <!-- search box -->
+                                <div class="search__box">
+                                    <ul class="search__list">
+                                        <li class="search__item">
+                                            <img
+                                                class="search__item-img"
+                                                src="https://product.hstatic.net/200000511439/product/blue_jack_cabernet_sauvignon_1917da5c187d41d2bad38d920dadb96a_master.jpg"
+                                                alt=""
+                                                height="40px"
+                                            />
+                                            <a href="#!" class="search__link">Rượu vang đỏ Úc Blue Jack Cabernet Sauvignon</a>
+                                        </li>
+                                        <li class="search__item">
+                                            <img
+                                                class="search__item-img"
+                                                src="https://product.hstatic.net/200000511439/product/blue_jack_cabernet_sauvignon_1917da5c187d41d2bad38d920dadb96a_master.jpg"
+                                                alt=""
+                                                height="40px"
+                                            />
+                                            <a href="#!" class="search__link">Rượu vang đỏ Úc Blue Jack Cabernet Sauvignon</a>
+                                        </li>
+                                        <li class="search__item">
+                                            <img
+                                                class="search__item-img"
+                                                src="https://product.hstatic.net/200000511439/product/blue_jack_cabernet_sauvignon_1917da5c187d41d2bad38d920dadb96a_master.jpg"
+                                                alt=""
+                                                height="40px"
+                                            />
+                                            <a href="#!" class="search__link">Rượu vang đỏ Úc Blue Jack Cabernet Sauvignon</a>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                             <div class="header__social">
-                                <img src="./assets/icon/icon-facebook.png" alt="" />
-                                <img src="./assets/icon/icon-instagram.png" alt="" />
-                                <img src="./assets/icon/icon-tiktok.png" alt="" />
-                                <img src="./assets/icon/icon-youtube.png" alt="" />
+                                <a class="header__social-list" href="#!"
+                                    ><i class="fa-brands fa-facebook-f" style="color: currentColor"></i></a
+                                ><a class="header__social-list" href="#!"
+                                    ><i class="fa-brands fa-instagram" style="color: currentColor"></i></a
+                                ><a class="header__social-list" href="#!"
+                                    ><i class="fa-brands fa-tiktok" style="color: currentColor"></i></a
+                                ><a class="header__social-list" href="#!"
+                                    ><i class="fa-brands fa-youtube" style="color: currentColor"></i
+                                ></a>
                             </div>
                         </div>
                     </div>
@@ -51,8 +95,8 @@
                 <div class="header__bottom">
                     <img class="logo" src="./assets/icon/Logo.png" alt="bettychoice" />
                     <nav class="nav">
-                        <ul class="nav__lish">
-                            <li class="nav__item"><a href="#!" class="nav__link">vang đỏ</a></li>
+                        <ul class="nav__list">
+                            <li class="nav__item"><a href="#!" class="nav__link active">vang đỏ</a></li>
                             <li class="nav__item"><a href="#!" class="nav__link">vang trắng</a></li>
                             <li class="nav__item"><a href="#!" class="nav__link">Vang hồng</a></li>
                             <li class="nav__item"><a href="#!" class="nav__link">Vang tím</a></li>
@@ -65,5 +109,60 @@
                 </div>
             </div>
         </header>
+        <!-- ===========Hero================ -->
+        <section class="slider-hero">
+            <div class="slider-container">
+                <div class="slider">
+                    <div class="slide active">
+                        <img src="./assets/icon/2 chai ruou.jpg" alt="Banner 1" />
+                    </div>
+                    <div class="slide">
+                        <img src="./assets/icon/2 chai ruou.jpg" alt="Banner 2" />
+                    </div>
+                    <div class="slide">
+                        <img src="./assets/icon/2 chai ruou.jpg" alt="Banner 3" />
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="btn__slider">
+                    <button class="prev-btn" onclick="prevSlide()">&#10094;</button>
+                    <button class="next-btn" onclick="nextSlide()">&#10095;</button>
+                </div>
+            </div>
+        </section>
+
+        <script>
+            let currentSlide = 0;
+
+            function showSlide(index) {
+                const slides = document.querySelectorAll(".slide");
+                const totalSlides = slides.length;
+
+                if (index >= totalSlides) {
+                    currentSlide = 0;
+                } else if (index < 0) {
+                    currentSlide = totalSlides - 1;
+                } else {
+                    currentSlide = index;
+                }
+
+                const slider = document.querySelector(".slider");
+                slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+            }
+
+            function nextSlide() {
+                showSlide(currentSlide + 1);
+            }
+
+            function prevSlide() {
+                showSlide(currentSlide - 1);
+            }
+
+            // Auto slide (optional)
+            setInterval(() => {
+                nextSlide();
+            }, 5000);
+        </script>
     </body>
 </html>

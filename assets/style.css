@@ -69,6 +69,7 @@ a {
 }
 
 /* ====================== header ====================== */
+/* ----------Header top ------------- */
 .header {
 }
 
@@ -78,6 +79,7 @@ a {
     background: var(--color-secondary);
     display: flex;
     align-items: center;
+    border-bottom: 2px solid rgb(208, 208, 208);
 }
 
 .header__box {
@@ -117,10 +119,173 @@ a {
     gap: 24px;
 }
 
+.header__search {
+    position: relative;
+}
+
 .header__search input {
     width: 370px;
     height: 40px;
     border-radius: 20px;
     border: 2px solid var(--color-primary);
     padding: 0 20px;
+    outline: none;
+}
+
+.search__box {
+    position: absolute;
+    background-color: white;
+    margin-top: 3px;
+    border-radius: 4px;
+    display: none;
+}
+
+.search__list {
+    margin: 10px 0;
+}
+
+.search__item {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    padding: 10px;
+}
+
+.search__item:hover {
+    background: var(--color-secondary);
+}
+
+.search__item-img {
+}
+
+.search__link {
+    font-size: 1.4rem;
+    line-height: 1.3;
+    color: var(--color-primary);
+}
+
+.header__social {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.header__social-list {
+    background: #f1f1f1;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-primary);
+    border-radius: 4px;
+}
+
+.header__social-list:hover {
+    background: var(--color-primary);
+    color: #fff;
+}
+
+.header__social-list li {
+    color: var(--color-primary);
+    color: inherit;
+}
+
+/* ----------Header bottom ------------- */
+.header__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 0;
+}
+
+.logo {
+    height: 60px;
+    object-fit: cover;
+}
+
+.nav {
+}
+
+.nav__list {
+    display: flex;
+}
+
+.nav__item {
+    padding-left: 4px;
+    padding-right: 4px;
+    position: relative;
+}
+
+.nav__link {
+    padding: 8px;
+    font-weight: 700;
+    font-size: 1.6rem;
+    color: #929ba3;
+    text-transform: uppercase;
+}
+
+.nav__link.active,
+.nav__link:hover {
+    color: var(--color-primary);
+}
+
+.nav__link.active::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: var(--color-primary);
+    top: -37px;
+    left: 0;
+}
+
+/* ====================== Hero ====================== */
+.slider-container {
+    position: relative;
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.slide img {
+    width: 100%;
+    display: block;
+}
+
+.prev-btn,
+.next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
+
+.prev-btn:hover,
+.next-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
 }
