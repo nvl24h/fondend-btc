@@ -54,11 +54,11 @@ a {
     opacity: 0.9;
 }
 
-.section-heading {
+/*.section-heading {
     color: #10375c;
     font-size: 5rem;
     font-weight: 600;
-    line-height: 1.2; /* 120% */
+    line-height: 1.2;
     letter-spacing: -1px;
 }
 
@@ -67,7 +67,19 @@ a {
     color: #575f66;
     font-size: 1.8rem;
     font-weight: 300;
-    line-height: 1.67; /* 166.667% */
+    line-height: 1.67;
+}*/
+
+.heading__title {
+    font-size: 4rem;
+    line-height: 1.5;
+    font-weight: bold;
+}
+
+.heading__sub {
+    font-size: 3rem;
+    line-height: 1.5;
+    font-weight: bold;
 }
 
 /* ====================== header ====================== */
@@ -140,7 +152,12 @@ a {
     background-color: white;
     margin-top: 3px;
     border-radius: 4px;
+    z-index: 2;
     display: none;
+}
+
+.header__search input:focus + .search__box {
+    display: block !important;
 }
 
 .search__list {
@@ -248,6 +265,7 @@ a {
 /* ====================== Hero ====================== */
 .hero__top {
     width: 100%;
+    overflow: hidden;
 }
 
 .slider {
@@ -387,8 +405,9 @@ a {
 .feature {
     height: 265px;
     background: var(--color-secondary);
-    display: flex;
+    display: grid;
     align-items: center;
+    overflow: hidden;
 }
 
 .feature__list {
@@ -455,4 +474,131 @@ a {
     top: 0;
     font-size: 10rem;
     color: #e6e6e6;
+}
+
+/* ====================== About ====================== */
+
+.about {
+    height: 935px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-image: url("./img/background\ img\ home\ page.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    background-color: rgba(255, 255, 255, 0.9);
+    overflow: hidden;
+}
+
+.about__box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+}
+
+.about__img {
+    width: 275px;
+    height: 300px;
+    object-fit: cover;
+}
+
+.about__left {
+    display: flex;
+    gap: 30px;
+}
+
+.about__image {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.about__img_left {
+    margin-top: -70px;
+}
+
+.about__img_right {
+    margin-bottom: -70px;
+}
+
+.about__right {
+    padding: 36px;
+}
+
+.about__title {
+    font-size: 2.8rem;
+    font-weight: bold;
+    color: var(--color-primary);
+    text-transform: uppercase;
+}
+
+.about__heading {
+    font-size: 6rem;
+    line-height: 1.4;
+    font-weight: bold;
+    padding: 20px 0;
+}
+
+.about__desc {
+    font-size: 1.4rem;
+    font-weight: 400;
+    padding: 30px 0;
+    color: #474747;
+    line-height: 1.4;
+}
+
+/* ====================== media ====================== */
+.media {
+    height: 700px;
+    width: 100%;
+    background: #01182e;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background-image: url("./img/Background\ cideo.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.media__box {
+    display: flex;
+    align-items: center;
+}
+
+.media__ctv {
+    width: 465px;
+    padding-right: 30px;
+}
+
+.media__heading {
+    font-size: 5.2rem;
+    font-weight: bold;
+    color: white;
+    line-height: 1.2;
+}
+
+.media__heading span {
+    color: var(--color-primary);
+}
+
+.media__heading3 {
+    font-size: 4.4rem;
+    line-height: 1.4;
+    color: white;
+}
+
+.media__desc {
+    font-size: 1.4rem;
+    color: white;
+    line-height: 1.8;
+    padding-bottom: 20px;
+}
+
+.media__desc strong {
+    font-weight: bold;
+}
+
+.media__desc + .media__desc {
+    padding-bottom: 20px;
 }
