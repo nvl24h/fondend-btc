@@ -324,12 +324,72 @@
                         <!-- Product 1 -->
                         <div class="product__item">
                             <img
+                                class="product__image"
                                 src="https://product.hstatic.net/200000511439/product/heart_of_the_murray_do_rose_d638e5ebacc74d548941948f5edab72d_large.jpg"
                                 alt="image 1"
                             />
                             <h3 class="product__title">Rượu vang đỏ Beverly Hills Shiraz Cabernet Sauvignon</h3>
-                            <p class="priduct__price">650,000</p>
+                            <p class="product__price">650,000</p>
+                            <a class="product__link" href="#!"><i class="fa-solid fa-arrow-right" style="color: currentColor"></i></a>
                         </div>
+                        <div class="product__item">
+                            <img
+                                class="product__image"
+                                src="https://product.hstatic.net/200000511439/product/heart_of_the_murray_do_rose_d638e5ebacc74d548941948f5edab72d_large.jpg"
+                                alt="image 1"
+                            />
+                            <h3 class="product__title">Rượu vang đỏ Beverly Hills Shiraz Cabernet Sauvignon</h3>
+                            <p class="product__price">650,000</p>
+                            <a class="product__link" href="#!"><i class="fa-solid fa-arrow-right" style="color: currentColor"></i></a>
+                        </div>
+                        <div class="product__item">
+                            <img
+                                class="product__image"
+                                src="https://product.hstatic.net/200000511439/product/heart_of_the_murray_do_rose_d638e5ebacc74d548941948f5edab72d_large.jpg"
+                                alt="image 1"
+                            />
+                            <h3 class="product__title">Rượu vang đỏ Beverly Hills Shiraz Cabernet Sauvignon</h3>
+                            <p class="product__price">650,000</p>
+                            <a class="product__link" href="#!"><i class="fa-solid fa-arrow-right" style="color: currentColor"></i></a>
+                        </div>
+                        <div class="product__item">
+                            <img
+                                class="product__image"
+                                src="https://product.hstatic.net/200000511439/product/heart_of_the_murray_do_rose_d638e5ebacc74d548941948f5edab72d_large.jpg"
+                                alt="image 1"
+                            />
+                            <h3 class="product__title">Rượu vang đỏ Beverly Hills Shiraz Cabernet Sauvignon</h3>
+                            <p class="product__price">650,000</p>
+                            <a class="product__link" href="#!"><i class="fa-solid fa-arrow-right" style="color: currentColor"></i></a>
+                        </div>
+                        <div class="product__item">
+                            <img
+                                class="product__image"
+                                src="https://product.hstatic.net/200000511439/product/heart_of_the_murray_do_rose_d638e5ebacc74d548941948f5edab72d_large.jpg"
+                                alt="image 1"
+                            />
+                            <h3 class="product__title">Rượu vang đỏ Beverly Hills Shiraz Cabernet Sauvignon</h3>
+                            <p class="product__price">650,000</p>
+                            <a class="product__link" href="#!"><i class="fa-solid fa-arrow-right" style="color: currentColor"></i></a>
+                        </div>
+                        <div class="product__item">
+                            <img
+                                class="product__image"
+                                src="https://product.hstatic.net/200000511439/product/heart_of_the_murray_do_rose_d638e5ebacc74d548941948f5edab72d_large.jpg"
+                                alt="image 1"
+                            />
+                            <h3 class="product__title">Rượu vang đỏ Beverly Hills Shiraz Cabernet Sauvignon</h3>
+                            <p class="product__price">650,000</p>
+                            <a class="product__link" href="#!"><i class="fa-solid fa-arrow-right" style="color: currentColor"></i></a>
+                        </div>
+                    </div>
+                    <div class="products__slider-btn">
+                        <button class="products__prev">
+                            <i class="fa-solid fa-arrow-left fa-xl" style="color: currentColor"></i>
+                        </button>
+                        <button class="products__next">
+                            <i class="fa-solid fa-arrow-right fa-xl" style="color: currentColor"></i>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -367,6 +427,33 @@
             setInterval(() => {
                 nextSlide();
             }, 3000);
+
+            // ==============================
+            document.addEventListener("DOMContentLoaded", function () {
+                const productList = document.querySelector(".products__list");
+                const prevBtn = document.querySelector(".products__prev");
+                const nextBtn = document.querySelector(".products__next");
+
+                let currentTranslate = 0; // Vị trí hiện tại của translate
+                const itemWidth = 295; // Chiều rộng của 1 sản phẩm (bao gồm khoảng cách)
+                const maxScroll = productList.scrollWidth - productList.clientWidth; // Giới hạn cuộn tối đa
+
+                // Xử lý sự kiện bấm nút next
+                nextBtn.addEventListener("click", () => {
+                    if (Math.abs(currentTranslate) < maxScroll) {
+                        currentTranslate -= itemWidth; // Di chuyển sang trái
+                        productList.style.transform = `translate3d(${currentTranslate}px, 0, 0)`;
+                    }
+                });
+
+                // Xử lý sự kiện bấm nút prev
+                prevBtn.addEventListener("click", () => {
+                    if (currentTranslate < 0) {
+                        currentTranslate += itemWidth; // Di chuyển sang phải
+                        productList.style.transform = `translate3d(${currentTranslate}px, 0, 0)`;
+                    }
+                });
+            });
         </script>
     </body>
 </html>
