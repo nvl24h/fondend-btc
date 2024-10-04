@@ -103,7 +103,6 @@ a {
 
 .header__left-box {
     display: flex;
-    width: 129px;
     gap: 8px;
 }
 
@@ -124,6 +123,7 @@ a {
 
 .header__right {
     display: flex;
+    align-items: center;
     gap: 24px;
 }
 
@@ -753,7 +753,7 @@ a {
 }
 
 .heading__title-3 {
-    font-size: 3rem;
+    font-size: 2.7rem;
     font-weight: bold;
     padding-top: 45px;
 }
