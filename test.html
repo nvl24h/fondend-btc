@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Carousel Sự Kiện</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+        <style>
+            /* CSS cho phần Events Carousel */
+            .events {
+                position: relative;
+                width: 100%;
+                max-width: 1200px;
+                margin: 0 auto;
+                overflow: hidden;
+                padding: 20px 0;
+            }
+
+            .events h2.heading__title {
+                text-align: center;
+                margin-bottom: 20px;
+            }
+
+            .carousel-container {
+                position: relative;
+                width: 100%;
+                height: 500px; /* Điều chỉnh chiều cao theo nhu cầu */
+            }
+
+            .event__list {
+                position: relative;
+                width: 100%;
+                height: 100%;
+            }
+
+            .event__item {
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%) scale(0.8);
+                opacity: 0.5;
+                transition: all 0.5s ease;
+                cursor: pointer;
+                width: 60%; /* Chiều rộng của mục chính */
+                z-index: 1;
+            }
+
+            .event__item.active {
+                transform: translateX(-50%) scale(1);
+                opacity: 1;
+                z-index: 3;
+            }
+
+            .event__item.prev {
+                transform: translateX(-100%) scale(0.9);
+                opacity: 0.7;
+                z-index: 2;
+            }
+
+            .event__item.next {
+                transform: translateX(100%) scale(0.9);
+                opacity: 0.7;
+                z-index: 2;
+            }
+
+            .event__item img {
+                width: 100%;
+                border-radius: 10px;
+            }
+
+            .event__box {
+                text-align: center;
+                margin-top: 10px;
+            }
+
+            .slider-btn {
+                position: absolute;
+                top: 50%;
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                transform: translateY(-50%);
+                pointer-events: none; /* Để các nút không chặn các sự kiện khác */
+            }
+
+            .slider-btn button {
+                background: rgba(255, 255, 255, 0.7);
+                border: none;
+                padding: 10px;
+                border-radius: 50%;
+                cursor: pointer;
+                transition: background 0.3s;
+                pointer-events: all; /* Cho phép các nút nhận sự kiện */
+            }
+
+            .slider-btn button:hover {
+                background: rgba(255, 255, 255, 1);
+            }
+
+            .carousel-dots {
+                text-align: center;
+                margin-top: 20px;
+            }
+
+            .carousel-dots span {
+                display: inline-block;
+                width: 10px;
+                height: 10px;
+                background: #ccc;
+                border-radius: 50%;
+                margin: 0 5px;
+                cursor: pointer;
+                transition: background 0.3s;
+            }
+
+            .carousel-dots span.active {
+                background: #333;
+            }
+
+            /* Responsive */
+            @media (max-width: 768px) {
+                .event__item {
+                    width: 80%;
+                }
+                .event__item.prev {
+                    transform: translateX(-100%) scale(0.9);
+                }
+                .event__item.next {
+                    transform: translateX(100%) scale(0.9);
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <section class="events">
+            <h2 class="heading__title events__title">Sự kiện</h2>
+            <div id="events-carousel" class="carousel-container">
+                <div class="event__list">
+                    <!-- item 1 -->
+                    <div class="event__item">
+                        <img src="./assets/img/Event01.png" alt="Event 1" />
+                        <div class="event__box">
+                            <h3 class="heading__sub event__title">Hà Nội | MATTER of TASTE |</h3>
+                            <p class="desc event__time">Thời gian: 18:00, ngày 28/09/2024</p>
+                            <p class="desc event__address">
+                                Địa điểm: Phòng Grand Cru – Bottle Bunker, Tầng 1 LOTTE Mall West Lake, Tây Hồ, Hà Nội
+                            </p>
+                        </div>
+                    </div>
+                    <!-- item 2 -->
+                    <div class="event__item">
+                        <img src="./assets/img/Event02.png" alt="Event 2" />
+                        <div class="event__box">
+                            <h3 class="heading__sub event__title">TP.HCM | FOOD FEST |</h3>
+                            <p class="desc event__time">Thời gian: 19:00, ngày 05/10/2024</p>
+                            <p class="desc event__address">Địa điểm: Nhà hàng XYZ, Quận 1, TP.HCM</p>
+                        </div>
+                    </div>
+                    <!-- item 3 -->
+                    <div class="event__item">
+                        <img src="./assets/img/Event03.png" alt="Event 3" />
+                        <div class="event__box">
+                            <h3 class="heading__sub event__title">Đà Nẵng | BEACH PARTY |</h3>
+                            <p class="desc event__time">Thời gian: 20:00, ngày 10/10/2024</p>
+                            <p class="desc event__address">Địa điểm: Bãi biển Mỹ Khê, Đà Nẵng</p>
+                        </div>
+                    </div>
+                    <!-- item 4 -->
+                    <div class="event__item">
+                        <img src="./assets/img/Event04.png" alt="Event 4" />
+                        <div class="event__box">
+                            <h3 class="heading__sub event__title">Hải Phòng | MUSIC FEST |</h3>
+                            <p class="desc event__time">Thời gian: 21:00, ngày 15/10/2024</p>
+                            <p class="desc event__address">Địa điểm: Nhà hát lớn Hải Phòng</p>
+                        </div>
+                    </div>
+                    <!-- item 5 -->
+                    <div class="event__item">
+                        <img src="./assets/img/Event05.png" alt="Event 5" />
+                        <div class="event__box">
+                            <h3 class="heading__sub event__title">Cần Thơ | FOOD TRUCK |</h3>
+                            <p class="desc event__time">Thời gian: 17:00, ngày 20/10/2024</p>
+                            <p class="desc event__address">Địa điểm: Công viên Nông Trại Cao Thắng, Cần Thơ</p>
+                        </div>
+                    </div>
+                    <!-- item 6 -->
+                    <div class="event__item">
+                        <img src="./assets/img/Event06.png" alt="Event 6" />
+                        <div class="event__box">
+                            <h3 class="heading__sub event__title">Hà Nội | FESTIVAL OF ART |</h3>
+                            <p class="desc event__time">Thời gian: 18:30, ngày 22/10/2024</p>
+                            <p class="desc event__address">Địa điểm: Trung tâm Hội nghị Quốc gia, Hà Nội</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-btn">
+                    <button class="event__prev slider__event-prev">
+                        <i class="fa-solid fa-arrow-left fa-xl" style="color: currentColor"></i>
+                    </button>
+                    <button class="event__next slider__event-next">
+                        <i class="fa-solid fa-arrow-right fa-xl" style="color: currentColor"></i>
+                    </button>
+                </div>
+                <div class="carousel-dots"></div>
+            </div>
+        </section>
+
+        <!-- JQuery và JavaScript -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                function initCarousel($container, config) {
+                    const $items = $container.find(".event__item");
+                    const itemCount = $items.length;
+                    let currentIndex = 0;
+                    let autoPlayInterval;
+
+                    // Thiết lập cấu hình mặc định
+                    config = $.extend(
+                        {
+                            autoPlay: true,
+                            autoPlayDelay: 5000,
+                        },
+                        config
+                    );
+
+                    // Hàm cập nhật trạng thái của các mục
+                    function updateCarousel() {
+                        $items.removeClass("active prev next");
+
+                        // Current active item
+                        $items.eq(currentIndex).addClass("active");
+
+                        // Previous item
+                        const prevIndex = (currentIndex - 1 + itemCount) % itemCount;
+                        $items.eq(prevIndex).addClass("prev");
+
+                        // Next item
+                        const nextIndex = (currentIndex + 1) % itemCount;
+                        $items.eq(nextIndex).addClass("next");
+
+                        // Update dots
+                        updateDots();
+                    }
+
+                    // Hàm tạo các dấu chấm
+                    function createDots() {
+                        const $dots = $container.find(".carousel-dots");
+                        $dots.empty();
+                        for (let i = 0; i < itemCount; i++) {
+                            $dots.append("<span></span>");
+                        }
+                        updateDots();
+                    }
+
+                    // Hàm cập nhật các dấu chấm
+                    function updateDots() {
+                        $container.find(".carousel-dots span").removeClass("active").eq(currentIndex).addClass("active");
+                    }
+
+                    // Hàm chuyển đến mục kế tiếp
+                    function nextItem() {
+                        currentIndex = (currentIndex + 1) % itemCount;
+                        updateCarousel();
+                    }
+
+                    // Hàm chuyển đến mục trước
+                    function prevItem() {
+                        currentIndex = (currentIndex - 1 + itemCount) % itemCount;
+                        updateCarousel();
+                    }
+
+                    // Hàm chuyển đến mục cụ thể
+                    function goToItem(index) {
+                        currentIndex = index;
+                        updateCarousel();
+                    }
+
+                    // Hàm bắt đầu auto-play
+                    function startAutoPlay() {
+                        stopAutoPlay();
+                        if (config.autoPlay) {
+                            autoPlayInterval = setInterval(nextItem, config.autoPlayDelay);
+                        }
+                    }
+
+                    // Hàm dừng auto-play
+                    function stopAutoPlay() {
+                        clearInterval(autoPlayInterval);
+                    }
+
+                    // Sự kiện click cho nút next
+                    $container.find(".event__next").on("click", function () {
+                        nextItem();
+                        startAutoPlay();
+                    });
+
+                    // Sự kiện click cho nút prev
+                    $container.find(".event__prev").on("click", function () {
+                        prevItem();
+                        startAutoPlay();
+                    });
+
+                    // Sự kiện click cho các dấu chấm
+                    $container.find(".carousel-dots").on("click", "span", function () {
+                        const index = $(this).index();
+                        goToItem(index);
+                        startAutoPlay();
+                    });
+
+                    // Tạm dừng auto-play khi hover vào carousel
+                    $container.hover(stopAutoPlay, startAutoPlay);
+
+                    // Hàm tạo các dấu chấm và cập nhật carousel lần đầu
+                    createDots();
+                    updateCarousel();
+                    startAutoPlay();
+
+                    // Cập nhật khi cửa sổ thay đổi kích thước
+                    $(window).on("resize", updateCarousel);
+                }
+
+                // Khởi tạo carousel cho phần Events
+                initCarousel($("#events-carousel"), {
+                    autoPlayDelay: 5000,
+                });
+            });
+        </script>
+    </body>
+</html>

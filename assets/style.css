@@ -827,3 +827,25 @@ a {
 .partner__next {
     margin-right: -40px;
 }
+
+/* ====================== Event ====================== */
+
+.events {
+    text-align: center;
+    overflow: hidden;
+    width: 100%;
+}
+
+.events__title {
+    padding-bottom: 50px;
+}
+
+.event__list {
+    display: flex;
+    gap: 40px;
+    overflow: hidden;
+    scroll-behavior: smooth;
+}
+
+.event__item {
+}

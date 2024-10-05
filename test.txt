@@ -1,0 +1,486 @@
+<h2>1. 不重疊的左側輪播</h2>
+<div id="carousel1" class="carousel-container">
+  <div class="carousel-items">
+    <div class="carousel-item"><img src="https://picsum.photos/id/1018/600/400" alt="Item 1"></div>
+    <div class="carousel-item"><img src="https://picsum.photos/id/1015/600/400" alt="Item 2"></div>
+    <div class="carousel-item"><img src="https://picsum.photos/id/1019/600/400" alt="Item 3"></div>
+    <div class="carousel-item"><img src="https://picsum.photos/id/1016/600/400" alt="Item 4"></div>
+    <div class="carousel-item"><img src="https://picsum.photos/id/1020/600/400" alt="Item 5"></div>
+  </div>
+  <div class="carousel-nav">
+    <button class="prev">上一個</button>
+    <button class="next">下一個</button>
+  </div>
+  <div class="carousel-dots"></div>
+</div>
+
+<h2>2. 重疊的右側輪播</h2>
+<div id="carousel2" class="carousel-container">
+  <div class="carousel-items">
+    <div class="carousel-item"><img src="https://picsum.photos/id/1021/600/400" alt="Item A"></div>
+    <div class="carousel-item"><img src="https://picsum.photos/id/1022/600/400" alt="Item B"></div>
+    <div class="carousel-item"><img src="https://picsum.photos/id/1023/600/400" alt="Item C"></div>
+  </div>
+  <div class="carousel-nav">
+    <button class="prev">上一個</button>
+    <button class="next">下一個</button>
+  </div>
+  <div class="carousel-dots"></div>
+</div>
+
+<h2>3. 不重疊的多項目輪播</h2>
+<div id="carousel3" class="carousel-container">
+  <div class="carousel-items">
+    <div class="carousel-item"><img src="https://picsum.photos/id/1024/600/400" alt="Item X"></div>
+    <div class="carousel-item"><img src="https://picsum.photos/id/1025/600/400" alt="Item Y"></div>
+    <div class="carousel-item"><img src="https://picsum.photos/id/1026/600/400" alt="Item Z"></div>
+    <div class="carousel-item"><img src="https://picsum.photos/id/1027/600/400" alt="Item W"></div>
+    <div class="carousel-item"><img src="https://picsum.photos/id/1028/600/400" alt="Item V"></div>
+  </div>
+  <div class="carousel-nav">
+    <button class="prev">上一個</button>
+    <button class="next">下一個</button>
+  </div>
+  <div class="carousel-dots"></div>
+</div>
+
+
+<h2>4. 重疊的左側輪播</h2>
+<div id="carousel4" class="carousel-container">
+  <div class="carousel-items">
+    <div class="carousel-item"><img src="https://picsum.photos/id/1024/600/400" alt="Item X"></div>
+    <div class="carousel-item"><img src="https://picsum.photos/id/1025/600/400" alt="Item Y"></div>
+    <div class="carousel-item"><img src="https://picsum.photos/id/1026/600/400" alt="Item Z"></div>
+    <div class="carousel-item"><img src="https://picsum.photos/id/1027/600/400" alt="Item W"></div>
+    <div class="carousel-item"><img src="https://picsum.photos/id/1028/600/400" alt="Item V"></div>
+  </div>
+  <div class="carousel-nav">
+    <button class="prev">上一個</button>
+    <button class="next">下一個</button>
+  </div>
+  <div class="carousel-dots"></div>
+</div>
+
+<h2>5. 居中單項目輪播</h2>
+<div id="carousel5" class="carousel-container">
+  <div class="carousel-items">
+    <div class="carousel-item"><img src="https://picsum.photos/id/1024/600/400" alt="Item X"></div>
+    <div class="carousel-item"><img src="https://picsum.photos/id/1025/600/400" alt="Item Y"></div>
+    <div class="carousel-item"><img src="https://picsum.photos/id/1026/600/400" alt="Item Z"></div>
+    <div class="carousel-item"><img src="https://picsum.photos/id/1027/600/400" alt="Item W"></div>
+    <div class="carousel-item"><img src="https://picsum.photos/id/1028/600/400" alt="Item V"></div>
+  </div>
+  <div class="carousel-nav">
+    <button class="prev">上一個</button>
+    <button class="next">下一個</button>
+  </div>
+  <div class="carousel-dots"></div>
+</div>
+
+
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #f0f0f0;
+}
+.carousel-container {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  margin-bottom: 40px;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.carousel-items {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.carousel-item {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e9ecef;
+  font-size: 24px;
+  font-weight: bold;
+  color: #495057;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: all 0.5s ease;
+  overflow: hidden;
+}
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.carousel-nav {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+.carousel-nav button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 0 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.carousel-nav button:hover {
+  background-color: #0056b3;
+}
+.carousel-dots {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  z-index: 10;
+}
+.carousel-dots span {
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  background-color: #ced4da;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.carousel-dots span.active {
+  background-color: #007bff;
+}
+
+
+$(document).ready(function() {
+  function initCarousel($container, config) {
+    const $items = $container.find('.carousel-item');
+    const itemCount = $items.length;
+    let currentIndex = 0;
+    let autoPlayInterval;
+
+    // 設置默認配置
+    config = $.extend({
+      visibleItems: 3,
+      autoPlay: true,
+      autoPlayDelay: 3000,
+      secondaryPosition: 'right', // 可選值: 'left', 'right'
+      overlap: false, // 控制是否重疊
+      overlapRatio: 0.8, // 重疊比例
+      mainItemWidth: 0.6 // 主要項目寬度佔容器的比例
+    }, config);
+
+    function updateCarousel() {
+  const containerWidth = $container.width();
+  const visibleItems = Math.min(config.visibleItems, itemCount);
+  const mainItemWidth = containerWidth * config.mainItemWidth;
+  const secondaryItemWidth = (containerWidth - mainItemWidth) / (visibleItems - 1);
+  
+  const mainPosition = config.mainItemPosition || 'center'; // 'center' 或 'left'
+
+  $items.each(function(index) {
+    const offset = (index - currentIndex + itemCount) % itemCount;
+    let width, left, top, zIndex, opacity, scale;
+
+    if (offset < visibleItems) {
+      if (offset === 0) {
+        // 主要項目
+        width = mainItemWidth;
+        if (mainPosition === 'center') {
+          left = (containerWidth - mainItemWidth) / 2;
+        } else { // 'left'
+          left = 0;
+        }
+        zIndex = visibleItems + 1;
+        opacity = 1;
+        scale = 1;
+      } else {
+        // 次要項目
+        width = secondaryItemWidth;
+        if (mainPosition === 'center') {
+          if (offset <= visibleItems / 2) {
+            left = (containerWidth - mainItemWidth) / 2 - (visibleItems / 2 - offset + 0.5) * secondaryItemWidth;
+          } else {
+            left = (containerWidth + mainItemWidth) / 2 + (offset - visibleItems / 2 - 0.5) * secondaryItemWidth;
+          }
+        } else { // 'left'
+          left = mainItemWidth + (offset - 1) * secondaryItemWidth;
+        }
+        zIndex = visibleItems - offset;
+        opacity = 1 - (offset * 0.2);
+        scale = 1 - (offset * 0.1);
+      }
+
+      // 設置垂直位置
+      top = 10 + (offset * 5) + '%';
+
+      $(this).css({
+        width: width + 'px',
+        height: '80%',
+        left: left + 'px',
+        top: top,
+        zIndex: zIndex,
+        opacity: opacity,
+        transform: `scale(${scale})`,
+        transition: 'all 0.5s ease',
+        display: 'block'
+      });
+    } else {
+      // 隱藏的項目
+      $(this).css({
+        display: 'none'
+      });
+    }
+  });
+
+  updateDots();
+}
+
+    function createDots() {
+      const $dots = $container.find('.carousel-dots');
+      $dots.empty();
+      for (let i = 0; i < itemCount; i++) {
+        $dots.append('<span></span>');
+      }
+      updateDots();
+    }
+
+    function updateDots() {
+      $container.find('.carousel-dots span').removeClass('active').eq(currentIndex).addClass('active');
+    }
+
+    function nextItem() {
+      currentIndex = (currentIndex + 1) % itemCount;
+      updateCarousel();
+    }
+
+    function prevItem() {
+      currentIndex = (currentIndex - 1 + itemCount) % itemCount;
+      updateCarousel();
+    }
+
+    function startAutoPlay() {
+      stopAutoPlay();
+      if (config.autoPlay) {
+        autoPlayInterval = setInterval(nextItem, config.autoPlayDelay);
+      }
+    }
+
+    function stopAutoPlay() {
+      clearInterval(autoPlayInterval);
+    }
+
+    $container.find('.next').on('click', nextItem);
+    $container.find('.prev').on('click', prevItem);
+    $container.find('.carousel-dots').on('click', 'span', function() {
+      currentIndex = $(this).index();
+      updateCarousel();
+    });
+
+    $container.hover(stopAutoPlay, startAutoPlay);
+
+    // 初始設置
+    createDots();
+    updateCarousel();
+    startAutoPlay();
+
+    // 視窗大小改變時重新計算佈局
+    $(window).on('resize', updateCarousel);
+  }
+
+  // 初始化輪播示例
+  // 1. 不重疊的左側輪播
+  initCarousel($('#carousel1'), { 
+    visibleItems: 3, 
+    secondaryPosition: 'left',
+    overlap: false,
+    mainItemWidth: 0.5,
+    mainItemPosition: 'center'
+  });
+
+  // 2. 重疊的右側輪播
+  initCarousel($('#carousel2'), { 
+    visibleItems: 2, 
+    secondaryPosition: 'right',
+    overlap: true,
+    overlapRatio: 0.8,
+    mainItemWidth: 0.7
+  });
+
+  // 3. 不重疊的多項目輪播
+  initCarousel($('#carousel3'), { 
+    visibleItems: 5, 
+    secondaryPosition: 'right',
+    overlap: false,
+    mainItemWidth: 0.4
+  });
+
+  // 4. 重疊的左側輪播
+  initCarousel($('#carousel4'), { 
+    visibleItems: 2, 
+    secondaryPosition: 'left',
+    overlap: true,
+    overlapRatio: 0.7,
+    mainItemWidth: 0.6
+  });
+
+  // 5. 居中單項目輪播
+  initCarousel($('#carousel5'), { 
+    visibleItems: 1, 
+    secondaryPosition: 'right',
+    overlap: false,
+    mainItemWidth: 1
+  });
+});
+
+====================================logo
+<div class="u-wrapper">
+  <div class="c-carousel">
+    <div class="c-carousel__wrapper swiper">
+      <div class="c-carousel__inner-wrapper swiper-wrapper">
+        <div class="c-carousel__item swiper-slide"><img src="https://img.logoipsum.com/331.svg" alt=""></div>
+        <div class="c-carousel__item swiper-slide"><img src="https://img.logoipsum.com/257.svg" alt=""></div>
+        <div class="c-carousel__item swiper-slide"><img src="https://img.logoipsum.com/289.svg" alt=""></div>
+        <div class="c-carousel__item swiper-slide"><img src="https://img.logoipsum.com/242.svg" alt=""></div>
+        <div class="c-carousel__item swiper-slide"><img src="https://img.logoipsum.com/330.svg" alt=""></div>
+        <div class="c-carousel__item swiper-slide"><img src="https://img.logoipsum.com/321.svg" alt=""></div>
+        <div class="c-carousel__item swiper-slide"><img src="https://img.logoipsum.com/216.svg" alt=""></div>
+        <div class="c-carousel__item swiper-slide"><img src="https://img.logoipsum.com/288.svg" alt=""></div>
+        <div class="c-carousel__item swiper-slide"><img src="https://img.logoipsum.com/237.svg" alt=""></div>
+        <div class="c-carousel__item swiper-slide"><img src="https://img.logoipsum.com/265.svg" alt=""></div>
+      </div>
+    </div>
+    <div class="c-carousel__controls" style="--swiper-navigation-color: pink;">
+      <div class="c-carousel__button--prev"><svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polyline points="12 8 8 12 12 16"></polyline>
+          <line x1="16" y1="12" x2="8" y2="12"></line>
+        </svg></div>
+      <div class="c-carousel__button--next"><svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polyline points="12 16 16 12 12 8"></polyline>
+          <line x1="8" y1="12" x2="16" y2="12"></line>
+        </svg></div>
+    </div>
+  </div>
+  <div class="c-credits">
+    <div class="c-credits__wrapper">
+      <p>Logos by <a href="https://logoipsum.com/" target="_blank">Logoipsum</a>. Icons by <a href="https://feathericons.com/" target="_blank">Feather</a>.</p>
+    </div>
+  </div>
+</div>
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  display: flex;
+  align-items: stretch;
+  font-family: system-ui, sans-serif;
+  padding: 0 1rem;
+}
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+.u-wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.c-carousel {
+  overflow-x: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.c-carousel__wrapper.swiper {
+  margin: 0 48px;
+  position: static;
+}
+
+.c-carousel__inner-wrapper.swiper-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.c-carousel img {
+  margin: 0 auto;
+}
+
+.c-carousel__controls {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.c-carousel__button--next,
+.c-carousel__button--prev {
+  cursor: pointer;
+}
+
+.c-carousel__button--prev.swiper-button-disabled,
+.c-carousel__button--next.swiper-button-disabled {
+  opacity: 0.35;
+  cursor: auto;
+  pointer-events: none;
+}
+
+.c-carousel__item.swiper-slide {
+  max-width: 300px;
+  width: auto;
+  flex-shrink: 0;
+}
+
+
+// Following imports only used with bundlers!
+// import Swiper from "swiper";
+// import { Navigation, A11y } from 'swiper/modules';
+// import 'swiper/css';
+
+const swiper = new Swiper('.swiper', {
+  // modules: [Navigation, A11y],
+  direction: 'horizontal',
+  loop: false,
+  navigation: {
+    nextEl: '.c-carousel__button--next',
+    prevEl: '.c-carousel__button--prev',
+  },
+  slidesPerView: 'auto',
+  spaceBetween: 48,
+  a11y: {
+    prevSlideMessage: 'Previous slide',
+    nextSlideMessage: 'Next slide',
+  },
+});
+
+
+https://codepen.io/cristovaov/pen/bGPywBZ
+https://codepen.io/afyyjwug-the-vuer/pen/oNKjeJV
+https://kenwheeler.github.io/slick/
+https://www.npmjs.com/package/swiper
